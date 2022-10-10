@@ -2,10 +2,10 @@ package employee;
 
 public class Employee {
 
-    public String name;
-    public double salary;
-    public int workHours;
-    public int hireYear;
+    private String name;
+    private double salary;
+    private int workHours;
+    private int hireYear;
 
     // Kurucu metot
     public Employee(String name, double salary, int workHours,int hireYear){
@@ -43,8 +43,9 @@ public class Employee {
         }
         return 0; 
     }
+
+    public String toString(){
         
-    public void string(){
         System.out.println("İsim: " + this.name);
         System.out.println("Aylık Maaş: " + this.salary);
         System.out.println("Çalışma Saati: " + this.workHours);
@@ -54,5 +55,7 @@ public class Employee {
         System.out.println("Zam Miktarı: " + raiseSalary(this.salary, this.hireYear));
         System.out.println("Vergi ve Bonuslarla Maaş: " + (this.salary - tax(this.salary) + bonus(this.workHours, this.salary)));
         System.out.println("Toplam Maaş: " + (this.salary - tax(this.salary) + bonus(this.workHours, this.salary) + raiseSalary(this.salary, this.hireYear) ));
+
+        return name + " " + salary + " " + workHours + " " + hireYear;
     }
 }
